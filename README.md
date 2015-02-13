@@ -2,6 +2,6 @@
 
 This is my personal landing page for github. It's build with [compass](https://github.com/excentris/compass). 
 
-So it's a fork of it which is customized to my needs ...
+It's a fork of it which is simply customized to my needs ...
 
-
+[see the result here](http://maxkalb.github.io/)
