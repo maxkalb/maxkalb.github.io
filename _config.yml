@@ -1,27 +1,19 @@
-# general configuration
-url: http://excentris.net
-baseurl: '/compass'
+# Site settings
+title: A blog about lorem ipsum dolor sit amet
+description: A blog about lorem ipsum dolor sit amet
+#baseurl: "" # the subpath of your site, e.g. /blog
+#url: "https://mxklb.gitlab.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
-# compass configuration
-compass:
-  # an avatar or logo (optional)
-  logo: "/images/compass.png"
-  # author will appear under the avatar (optional)
-  author: "Compass"
-  # tagline will appear under the title (optional)
-  tagline: "The <a href='http://jekyllrb.com'>Jekyll</a> theme for your personal landing page"
-  # if include_content is true, the contents of the content.html include will be
-  # added right above the generated item list, if present
-  include_content: true
-  # if include_analytics is true, the content of the analytics.html include will
-  # be added at the end of the <head> section. You can add your Google Analytics
-  # Tracking Code to that file.
-  include_analytics: true
+# User settings
+username: Max Kalb
+user_description: I studied Optoelectronics & Image Processing. I Did two degrees, a Diplom Ingineer (Fh) 2006 and a Master of Science 2011. Besides working in the industry as a software developer with image processing based applications and hardware. I Mostly developed C++/Qt desktop applications for hardware devices such as 3D scanners, optical wavefront sensors and analogue film scanners. If you are looking for some one with skills in image, audio or signal prosessing, that's what I am ...
+user_title: Software Developer
+email: mxklb@protonmail.com
+skype_username: sebmaka
+gitlab_username: mxklb
 
-# Dependencies
-markdown: kramdown
-highlighter: pygments
+# Google-analytics
+google-analytics:
+  id: ""
 
-# Permalinks
-permalink: pretty
-relative_permalinks: true
+exclude: ['package.json', 'src' , 'node_modules']
