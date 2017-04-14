@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var cp = require('child_process');
 var imagemin = require('gulp-imagemin');
+var obfuscateEmail = require('gulp-hide-email');
 var browserSync = require('browser-sync');
 
 //var jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
@@ -22,14 +23,14 @@ gulp.task('jekyll-build', function (done) {
 /*
  * Rebuild Jekyll & reload browserSync
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-build', 'obfuscate'], function () {
 	browserSync.reload();
 });
 
 /*
  * Build the jekyll site and launch browser-sync
  */
-gulp.task('browser-sync', ['jekyll-build'], function() {
+gulp.task('browser-sync', ['jekyll-build', 'obfuscate'], function() {
 	browserSync({
 		server: {
 			baseDir: '_site'
@@ -46,6 +47,17 @@ gulp.task('sass', function() {
     .pipe(sass())
     .pipe(csso())
     .pipe(gulp.dest('assets/css'));
+});
+
+/*
+ * Obfuscate mail address
+ */
+gulp.task('obfuscate', ['jekyll-build'], function(){
+  gulp.src(['_site/index.html'])
+    // Obfuscate Block
+    .pipe(obfuscateEmail({verbose: true}))
+    // End of Obfuscate Block
+    .pipe(gulp.dest('./_site'));
 });
 
 /*
@@ -70,8 +82,8 @@ gulp.task('js', function(){
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/styles/**/*.scss', ['sass']);
-  gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/styles/**/*.scss', ['sass', 'jekyll-rebuild']);
+  gulp.watch('src/js/**/*.js', ['js', 'jekyll-rebuild']);
 	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
   gulp.watch(['*html', '_includes/*html', '_layouts/*.html'], ['jekyll-rebuild']);
 });
