@@ -8,7 +8,7 @@ description: a software developers page
 username: Max Kalb
 user_description: I studied Optical Technologies and Image Processing. I Did two degrees, a Diplom Engineer (FH) 2006 and a Master of Science 2011. Besides working in the industry as a software engineer with image processing based applications and hardware. Mostly I developed C++/Qt desktop applications for hardware devices such as 3D scanners, optical wavefront sensors and analogue film scanners. If you are looking for some one with skills in signal prosessing, that's what I am ...
 user_title: Software Engineer
-user_quote: I craft clean code
+user_quote: 
 user_workload: 40 # Already address time = workload [% per week]
 user_available: 24 # unaddress time [hours per week]
 user_salery: 60 # Sallery [Euro per hour]
