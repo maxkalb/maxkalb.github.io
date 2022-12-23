@@ -12,7 +12,7 @@ user_quote:
 user_workload: 40 # Already address time = workload [% per week]
 user_available: 24 # unaddress time [hours per week]
 user_salery: 60 # Sallery [Euro per hour]
-email: mxklb@protonmail.com
+email: mxklb@mailbox.org
 skype_username: live:dev_3647
 gitlab_username: mxklb
 github_username: mxklb
